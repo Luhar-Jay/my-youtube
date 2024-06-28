@@ -198,8 +198,8 @@ const Comment = ({ data }) => {
 
 const CommentsList = ({ comments }) => {
   return comments.map((comment, index) => (
-    <div>
-      <Comment key={index} data={comment} />
+    <div key={index}>
+      <Comment data={comment} />
       <div className="ml-5 p-2 border border-l-black">
         <CommentsList comments={comment.replies} />
       </div>
@@ -209,7 +209,7 @@ const CommentsList = ({ comments }) => {
 
 const CommentsContainer = () => {
   return (
-    <div>
+    <div className="w-[1200px]">
       <CommentsList comments={commentsData} />
     </div>
   );
